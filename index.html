@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <head>
+        <title>webdev</title>
+        <script type="text/javascript" src="senators.json"></script>
+        <script type="text/javascript" >
+            function load() {
+                var mydata = JSON.parse(objects);
+                alert(mydata.length);
+
+                var div = document.getElementById('data');
+
+                for(var i = 0;i < mydata.length; i++)
+                {
+                    div.innerHTML = div.innerHTML + "<p class='inner' id="+i+">"+ mydata[i] +"</p>" + "<br>";
+
+                }
+            }
+        </script>
+    </head>
+    <body onload="load()">
+        <div id="data">
+
+        </div>
+    </body>
+</html>
