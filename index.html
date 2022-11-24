@@ -1,59 +1,25 @@
 <!DOCTYPE html>
 <html>
-    
-<body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="scripts/script.js"></script>
 
-<div id="id01">...</div>
-<div id="id02">...</div>
+        <title>US Senate</title>
 
-
-<script>
-
-var xmlhttp = new XMLHttpRequest();
-var url = "senators.json";
-
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    </head>
         
-        //Parse the JSON data to a JavaScript variable. 
-        var parsedObj = JSON.parse(xmlhttp.responseText);    
-        // This function is defined below and deals with the JSON data parsed from the file. 
-        displayJSON(parsedObj); 
-    }
-};
+    <body onload="load_JSON()">
+        <header>
+            <img src="images/US Senate Logo.png" alt="US Senate Logo">
+            <div id="Title">
+                <h1>United</h1>
+                <h1>States</h1>
+                <h1>Senate</h1>
+            </div>
+        </header>
 
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-    
-function displayJSON(obj) {
-    
-    var sen = obj.objects;
-    
-    // This code iterates through the colorArray and writes html code to put the color information in a table.
-    var rep = 0;
-    var dem = 0;   
-    for (var i=0; i <sen.length; i++) 
-    {    
-        var part = sen[i].party; 
-        if(part == 'Republican')    
-        {
-            rep +=1;
-        }
-        else if(part == 'Democrat')    
-        {
-            dem +=1;
-        }
-        
-    }
-     // Close the table element.
-    
-    
-    // Add the new html code to the div element with id = 'id01'.
-    document.getElementById("id01").innerHTML = rep;
-    document.getElementById("id02").innerHTML = dem;
-    
-}
-</script>
+        <div id="id01">...</div>
+        <div id="id02">...</div>
 
-</body>
+    </body>
 </html>
