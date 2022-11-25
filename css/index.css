@@ -17,7 +17,7 @@ header {
     display: inline-block;
     width: 4%;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav{
@@ -28,14 +28,14 @@ nav{
 
 nav ul {
     float: right;
-    margin-right: 45px;
+    margin-right: 70px;
     margin-top: 30px;
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 0 10px;
+    margin: 0 20px;
     height:60px;
     line-height: 60px;
 }
@@ -60,7 +60,6 @@ nav ul li a:hover:after{
 }
 
 #US_senate_wrapper img {
-    margin-left: 25%;
     max-width: 100%;
     height: auto;
 }
@@ -87,4 +86,37 @@ nav ul li a:hover:after{
     width: 25%;
     margin-right: 20px;
 }
+
+.card_container {
+    float: left;
+    width: 50%;
+    height: 100vh;
+}
+.card {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 80%;
+}
+.card_border {
+    border-radius: 1.5rem;
+    background-color: white;
+}
+
+.card_title {
+    color: #B42434;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    background-color: white;    
+}
+
+#republican_logo {
+    margin: 0 auto;
+    width: 10%;
+}
+
+
 
