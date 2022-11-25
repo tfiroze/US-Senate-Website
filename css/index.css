@@ -109,14 +109,43 @@ nav ul li a:hover:after{
     margin: 0 auto;
     display: block;
     width: fit-content;
-    font-size: 3rem;
+    font-size: 5rem;
     background-color: white;    
 }
 
 #republican_logo {
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    border:5px solid #B42434;
+    border-bottom: 0px;
+    padding: 10px;
+    display: block;
     margin: 0 auto;
     width: 10%;
 }
 
+#republican_title
+{
+    height: 100px;
+    line-height: 100px;
+}
+
+.card_top_part {
+    display: block;
+    border:5px solid #B42434;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.count {
+    text-align: center;
+    font-size: 20rem;
+}
+
+.card_bottom_part {
+    background-color: #B42434;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
 
 
