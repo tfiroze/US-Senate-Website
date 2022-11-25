@@ -5,22 +5,40 @@
 }
 
 header {
+    position: relative;
     width: 100%;
-    display: inline-block;
-    height: 10rem;
+    display: block;
+    height: 85vh;
     background-color: #3C3C6C;
 }
 
-
-#Title {
+#US_senate_wrapper {
+    position: absolute;
     display: inline-block;
-    text-align: center;
-    position: relative;
+    right: 0;
+    bottom: 0;
 }
 
-header img {
+#US_senate_wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+#Title_wrapper {
+    font-family: "Helvetica";
     display: inline-block;
-    margin-left: 2rem;
-    margin-top: 0.65rem;
-    width: 9.5%;
+    width:20%;
+    height: fit-content;
+    position: absolute;
+    top: 20%;
+    left:10%;
+}
+#Title h1{
+    display: inline-block;
+}
+#Title_wrapper img {
+    width: 30%;
 }
