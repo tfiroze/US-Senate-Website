@@ -1,3 +1,4 @@
+@import 'font.css';
 * {
     margin:0;
     padding: 0;
@@ -12,6 +13,59 @@ header {
     background-color: #3C3C6C;
 }
 
+.mugesh{
+    
+    height: 20%;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 45px;
+    justify-content: center;
+    font-family: "seaside";
+}
+
+nav{
+    padding: 10px 0;
+}
+
+nav ul li{
+    display:inline-flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    list-style: none;
+    margin: auto 10px auto;
+    height:60px;
+    line-height: 60px;
+}
+
+nav ul li a{
+    
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 0;
+    height: 3px;
+    background: white;
+    transition: 0.25s ease;
+    transform-origin: center;
+    transform: scale(0,1);
+   
+}
+
+nav ul li a:hover:after{
+    width:100%;
+    transform-origin: center;
+    transform: scale(1,1);
+}
+
 #US_senate_wrapper {
     position: absolute;
     display: inline-block;
@@ -20,25 +74,31 @@ header {
 }
 
 #US_senate_wrapper img {
+    margin-left: 25%;
     max-width: 100%;
     height: auto;
 }
 
+#title {
 
-
+    margin-top: 10px;
+}
 
 #Title_wrapper {
-    font-family: "Helvetica";
-    display: inline-block;
-    width:20%;
-    height: fit-content;
+    display: block;
     position: absolute;
-    top: 20%;
-    left:10%;
+    top: 25%;
+    left:2%;
 }
-#Title h1{
-    display: inline-block;
+#Title_wrapper h1{
+    max-width: 100%;
+    font-family: "Bebas";
+    font-size: 1000%;
+    color: white;
 }
 #Title_wrapper img {
-    width: 30%;
+    float: left;
+    width: 25%;
+    margin-right: 20px;
 }
+
