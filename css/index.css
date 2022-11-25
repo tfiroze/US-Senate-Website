@@ -2,25 +2,45 @@
     margin:0;
     padding: 0;
     font-family: "Public Sans";
+    color: whitesmoke;
+    
+}
+body{
+    background-color: #0A3161;
+    background-image: url("../images/stars.png");  
 }
 
 header {
     width: 100%;
     display: inline-block;
     height: 10rem;
-    background-color: #3C3C6C;
+    background-color: #9D2146;
+    background-image: url("../images/us-sonsh.gif");  
+    
+    
+    
 }
 
 
 #Title {
-    display: inline-block;
-    text-align: center;
     position: relative;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 46px;
+    padding-top: 12px;
+    width: 400px;
+    background-color: #CC0000;
+    height: 60px;
+    
+    
+    
+    
 }
 
 header img {
     display: inline-block;
     margin-left: 2rem;
     margin-top: 0.65rem;
-    width: 9.5%;
+    width: 8%;
 }
