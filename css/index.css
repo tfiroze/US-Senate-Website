@@ -2,62 +2,48 @@
 * {
     margin:0;
     padding: 0;
-    font-family: "Public Sans";
+    font-family: "Bebas";
 }
 
 header {
     position: relative;
     width: 100%;
     display: block;
-    height: 85vh;
+    height: 100vh;
     background-color: #3C3C6C;
 }
 
-.mugesh{
-    
-    height: 20%;
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 45px;
-    justify-content: center;
-    font-family: "seaside";
+.US_Senate_logo{
+    display: inline-block;
+    width: 4%;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 nav{
-    padding: 10px 0;
+    width: 100%;
+    display: inline-block;
+    height: 15vh;
+}
+
+nav ul {
+    float: right;
+    margin-right: 45px;
+    margin-top: 30px;
 }
 
 nav ul li{
-    display:inline-flex;
-    justify-content: space-around;
-    padding: 10px 10px;
+    display: inline-block;
     list-style: none;
-    margin: auto 10px auto;
+    margin: 0 10px;
     height:60px;
     line-height: 60px;
 }
 
 nav ul li a{
-    
+    font-size: 2rem;
+    color: white;
     text-decoration: none;
-    font-size: 1.5rem;
-    position: relative;
-    text-align: center;
-}
-
-nav ul li a::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 80%;
-    width: 0;
-    height: 3px;
-    background: white;
-    transition: 0.25s ease;
-    transform-origin: center;
-    transform: scale(0,1);
-   
 }
 
 nav ul li a:hover:after{
