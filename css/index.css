@@ -43,8 +43,8 @@ header img {
     width: 8%;
 }
 #rep{
-    display: inline;  
-    width: 3px;  
+    display: inline;
+      
 }
 #dem{
     
@@ -60,4 +60,16 @@ header img {
 }
 #states{
     color: red;
+}
+table,td,th {
+    border: 3px solid #f9004d;
+    padding: 7px;
+    font-size: 18px;
+    
+}
+table{
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;    
+    
 }
