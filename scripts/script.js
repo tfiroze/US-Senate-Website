@@ -37,11 +37,27 @@ function displayJSON(obj) {
         }
         
     }
+    const lead=[]
+    const name=[]
+    j=0
+    for (var i=0; i <sen.length; i++) 
+    {    
+        var part = sen[i].leadership_title; 
+        if(part != null)    
+        {
+            lead[j]=part;
+            name[j]=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+            j += 1;
+        }
+        
+    }
      // Close the table element.
     
     
     // Add the new html code to the div element with id = 'id01'.
     document.getElementById("id01").innerHTML = rep;
     document.getElementById("id02").innerHTML = dem;
+    document.getElementById("id03").innerHTML = lead;
+    document.getElementById("id04").innerHTML = name;
     
 }
