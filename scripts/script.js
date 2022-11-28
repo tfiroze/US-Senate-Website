@@ -37,27 +37,34 @@ function displayJSON(obj) {
         }
         
     }
-    const lead=[]
-    const name=[]
+    var repout = "Republicans: " + rep;
+    var demout = "Democrats: " + dem;
+    var name;
     j=0
+    var leadInfo = "<table border = 2 >";
+    leadInfo += "<tr><th>Type</th><th>Title</th><th>Party</th></tr>"; 
     for (var i=0; i <sen.length; i++) 
     {    
-        var part = sen[i].leadership_title; 
-        if(part != null)    
+         
+        var lead = sen[i].leadership_title; 
+        
+        if(lead != null)    
         {
-            lead[j]=part;
-            name[j]=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+            var par = sen[i].party;
+            name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;            
+            leadInfo += "<tr><td>" + name + "</td><td>" + lead + "</td><td>" + par + "</td></tr>";
             j += 1;
         }
         
     }
+    leadInfo += "</table>"; 
      // Close the table element.
     
     
     // Add the new html code to the div element with id = 'id01'.
-    document.getElementById("id01").innerHTML = rep;
-    document.getElementById("id02").innerHTML = dem;
-    document.getElementById("id03").innerHTML = lead;
-    document.getElementById("id04").innerHTML = name;
+    document.getElementById("id01").innerHTML = repout;
+    document.getElementById("id02").innerHTML = demout;
+    document.getElementById("id03").innerHTML = leadInfo;
+    
     
 }
