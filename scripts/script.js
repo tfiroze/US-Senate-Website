@@ -40,9 +40,8 @@ function displayJSON(obj) {
     var repout = "Republicans: " + rep;
     var demout = "Democrats: " + dem;
     var name;
-    j=0
     var leadInfo = "<table border = 2 >";
-    leadInfo += "<tr><th>Type</th><th>Title</th><th>Party</th></tr>"; 
+    leadInfo += "<tr><th>Title</th><th>Name</th><th>Party</th></tr>"; 
     for (var i=0; i <sen.length; i++) 
     {    
          
@@ -51,13 +50,43 @@ function displayJSON(obj) {
         if(lead != null)    
         {
             var par = sen[i].party;
-            name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;            
-            leadInfo += "<tr><td>" + name + "</td><td>" + lead + "</td><td>" + par + "</td></tr>";
-            j += 1;
+            if(par=="Democrat")
+            {
+                name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;            
+                leadInfo += "<tr><td>" + lead + "</td><td>" +  name+ "</td><td>" + par + "</td></tr>";
+            }
         }
         
     }
-    leadInfo += "</table>"; 
+    for (var i=0; i <sen.length; i++) 
+    {    
+         
+        var lead = sen[i].leadership_title; 
+        
+        if(lead != null)    
+        {
+            var par = sen[i].party;
+            if(par=="Republican")
+            {
+                name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;            
+                leadInfo += "<tr><td>" + lead + "</td><td>" +  name+ "</td><td>" + par + "</td></tr>";
+            }
+        }
+        
+    }
+    leadInfo += "</table>";
+    seninfo = "<table border = 2 >";
+    seninfo += "<tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th></tr>";
+    for (var i=0; i <sen.length; i++) 
+    { 
+        var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+        var par = sen[i].party;
+        var state = sen[i].state;
+        var gend = sen[i].person.gender; 
+        var rank = sen[i].senator_rank_label;
+        seninfo += "<tr><td>" + name + "</td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td></tr>";
+    }
+    seninfo += "</table>";
      // Close the table element.
     
     
@@ -65,6 +94,7 @@ function displayJSON(obj) {
     document.getElementById("id01").innerHTML = repout;
     document.getElementById("id02").innerHTML = demout;
     document.getElementById("id03").innerHTML = leadInfo;
+    document.getElementById("id04").innerHTML = seninfo;
     
     
 }
