@@ -41,8 +41,8 @@ function displayJSON(obj) {
     var demout = "Democrats: " + dem;
     var name;
     j=0
-    var leadInfo = "<table border = 2 >";
-    leadInfo += "<tr><th>Type</th><th>Title</th><th>Party</th></tr>"; 
+    var leadInfo = "";
+    leadInfo += "<thead><th>Type</th><th>Title</th><th>Party</th></thead>"; 
     for (var i=0; i <sen.length; i++) 
     {    
          
@@ -56,14 +56,13 @@ function displayJSON(obj) {
             j += 1;
         }
         
-    }
-    leadInfo += "</table>"; 
-     // Close the table element.
+    }     // Close the table element.
     
     
     // Add the new html code to the div element with id = 'id01'.
     document.getElementById("democratic_count").innerHTML = dem;
     document.getElementById("republican_count").innerHTML = rep;
+    document.getElementById("lead_role_info_table").innerHTML = leadInfo;
     
     
 }
