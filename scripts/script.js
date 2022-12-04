@@ -76,18 +76,26 @@ function displayJSON(obj) {
     }
     leadInfo += "</table>";
     seninfo = "<table border = 2 >";
-    seninfo += "<tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th></tr>";
+    seninfo += "<tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr>";
     for (var i=0; i <sen.length; i++) 
     { 
         var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
         var par = sen[i].party;
         var state = sen[i].state;
         var gend = sen[i].person.gender; 
-        var rank = sen[i].senator_rank_label;
-        seninfo += "<tr><td>" + name + "</td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td></tr>";
+        var rank = sen[i].senator_rank_label; 
+        
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>";
     }
     seninfo += "</table>";
      // Close the table element.
+     var op
+    function page(vat)
+    {
+        location.href = "test.html";
+        op = vat;
+    }
+
     
     
     // Add the new html code to the div element with id = 'id01'.
@@ -95,6 +103,6 @@ function displayJSON(obj) {
     document.getElementById("id02").innerHTML = demout;
     document.getElementById("id03").innerHTML = leadInfo;
     document.getElementById("id04").innerHTML = seninfo;
-    
+    document.getElementById("id05").innerHTML = op;
     
 }
