@@ -176,14 +176,32 @@ function filter_type(value, type) {
 }
 
 
-var op
 function display_page(num){
         localStorage.setItem("id", num);
         window.location.href = "test.html";
 }
 
 function load_JSON() {
-    document.getElementById("id05").innerHTML = localStorage.getItem("id");
+    num = localStorage.getItem("id");
+    seninfo = "";
+        seninfo += "<thead><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></thead>";
+        for (var i=0; i <sen.length; i++) 
+        {
+            if(num==sen[i].person.cspanid)
+            {
+                var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+                var office = sen[i].office;
+                var dob = sen[i].person.birthday;
+                var startdate = sen[i].startdate; 
+                var twitter = sen[i].person.twitter;  
+                var yout = sen[i].person.youtubeid;
+                
+            }
+        }
+        seninfo += "<tr><td>"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td></tr>";
+        seninfo += "</thead>"; 
+
+    document.getElementById("table").innerHTML = seninfo;
 
 }
     
