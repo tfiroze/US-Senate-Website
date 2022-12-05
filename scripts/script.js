@@ -137,9 +137,7 @@ function page(num)
                 
                 
             }
-        }
         seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td><td><a href=\""+web+"\">Website link</a></td></tr>";
         seninfo += "</table>"; 
+        }
         
-
-    }
