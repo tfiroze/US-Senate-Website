@@ -74,7 +74,7 @@ function displayJSON(obj) {
         
     }  
     leadInfo+= "</tbody></table>";   // Close the table element.
-    seninfo = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>";
+    seninfo = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>More Details</th></tr></thead><tbody>";
     party_list=[];
     state_list=[];
     rank_list=[];
@@ -84,7 +84,7 @@ function displayJSON(obj) {
 
     function add_element(obj, content, key) {
         if (!(key in obj)) {
-            head = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>"
+            head = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>More Details</th></tr></thead><tbody>"
             obj[key] = [head+content]
         }
         else {
@@ -110,7 +110,7 @@ function displayJSON(obj) {
         if (!rank_list.includes(rank)) {
             rank_list.push(rank);
         }
-        html = "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>"
+        html = "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button id = \"view_button\" onClick=\"page()\">More</button></td></tr>"
         seninfo += html;
         add_element(party_content,html,par);
         add_element(state_content,html,state);
