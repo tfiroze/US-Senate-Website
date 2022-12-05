@@ -99,7 +99,6 @@ function displayJSON(obj) {
     document.getElementById("id02").innerHTML = demout;
     document.getElementById("id03").innerHTML = leadInfo;
     document.getElementById("id04").innerHTML = seninfo;
-    num = 5;
     document.getElementById("id05").innerHTML = repout;
     
     
