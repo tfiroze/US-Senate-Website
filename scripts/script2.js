@@ -190,7 +190,7 @@ function load_JSON() {
             if(num==sen[i].person.cspanid)
             {
                 var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
-                var office = sen[i].office;
+                var office = sen[i].extra.office;
                 var dob = sen[i].person.birthday;
                 var startdate = sen[i].startdate; 
                 if(sen[i].person.twitter!=null)
