@@ -4,6 +4,7 @@
     padding: 0;
     font-family: 'Oswald', sans-serif;   
     color: whitesmoke;
+    text-align: center;
     
 }
 body{
@@ -73,6 +74,26 @@ table,td,th {
 table{
     margin-top: 20px;
     border-collapse: collapse;
-    text-align: left;    
+    text-align: center;    
     
+}
+
+.container_more {
+    width : 60%;
+    margin: 0 auto;
+}
+
+#table {
+    width: 60%;
+    margin: 10% auto;
+}
+
+#name {
+    font-size: 3rem;
+    margin: 10%;
+}
+
+#button {
+    color: black;
+    width: 20%;
 }

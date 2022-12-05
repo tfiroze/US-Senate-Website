@@ -184,7 +184,7 @@ function display_page(num){
 function load_JSON() {
     num = localStorage.getItem("id");
     seninfo = "";
-        seninfo += "<thead><th>Name</th><th>Office</th><th>State</th><th>D.O.B</th><th>Start Date</th><th>Twitter</th><th>Youtube</th></thead>";
+        seninfo += "";
         for (var i=0; i <sen.length; i++) 
         {
             if(num==sen[i].person.cspanid)
@@ -193,13 +193,25 @@ function load_JSON() {
                 var office = sen[i].office;
                 var dob = sen[i].person.birthday;
                 var startdate = sen[i].startdate; 
-                var twitter = sen[i].person.twitter;  
+                if(sen[i].person.twitter!=null)
+                {
+                    var twitter = sen[i].person.twitter;  
+                }
+                else{
+                    var twitter = "No Twitter ID";
+                }
+                if(sen[i].person.youtubeid!=null)
+                {
+                    var yout = sen[i].person.youtubeid; 
+                }
+                else{
+                    var yout = "No Youtube ID";
+                }
                 var yout = sen[i].person.youtubeid;
-                
-            }
-        }
-        seninfo += "<tr><td>Office</td><td>"+name+"</td></tr><tr><td>Date of Birth</td><td>"+dob+"</td></tr><tr><td>Start Date</td><td>"+startdate+"</td></tr><tr><td>Twitter</td><td>"+twitter+"</td></tr><tr><td>Youtube</td><td>"+yout+"</td></tr><tr><td>Website</td><td>"+web+"</td></tr>";
-
+                var web = sen[i].website 
+            }}
+    seninfo += "<tr><td>Office</td><td>"+office+"</td></tr><tr><td>Date of Birth</td><td>"+dob+"</td></tr><tr><td>Start Date</td><td>"+startdate+"</td></tr><tr><td>Twitter</td><td>"+twitter+"</td></tr><tr><td>Youtube</td><td>"+yout+"</td></tr><tr><td>Website</td><td><a target = _blank href=\""+web+"\">"+web+"</td></tr>";
+    document.getElementById("name").innerHTML = name;
     document.getElementById("table").innerHTML = seninfo;
 
 }

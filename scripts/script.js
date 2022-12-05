@@ -124,6 +124,9 @@ function page(num)
                 else{
                     var twitter = "No Twitter ID";
                 }
+                if(office==null)
+                    var office = "No Office";
+                }
                 if(sen[i].person.youtubeid!=null)
                 {
                     var yout = sen[i].person.youtubeid; 
@@ -131,8 +134,7 @@ function page(num)
                 else{
                     var yout = "No Youtube ID";
                 }
-                var yout = sen[i].person.youtubeid;
-                var web = sen[i].website
+                
                 
             }
         }

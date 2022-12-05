@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/index2.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <script type="text/javascript" src="scripts/script2.js"></script>
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
         <title>US Senate</title>
 
     </head>
-        
     <body onload="load_JSON()">
         <header>
-            <h1 class="title">
-                United States Senate
-            </h1>
+            
+            <div id="Title">
+                <h1>UNITED <span id="states">STATES</span> <span id="sen">SENATE</span></h1>
+            </div>
         </header>
-
-        <h1 class="name"></h1>
+        <div class="container_more">
+            <h1 id="name"></h1>
         
-        <table id="table"></table>
+            <table id="table"></table>
+            <button id = "button" type="submit" onclick="window.history.go(-1); return false;">Go back</button>
+
+        </div>
+
+        
             
     </body>
 </html>
