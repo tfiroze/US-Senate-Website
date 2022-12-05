@@ -62,26 +62,27 @@
             <div class="senators_table_container">
                 <h1 class="senators_title">Senators</h1>
                 <div class="dropdown_container">
+                    <p class="filter">Filter By</p>
                     <div class="dropdown">
-                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
-                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                        <input type="button" class = "default" onmouseenter="buttonOnHover(0)" onmouseleave="buttonOnLeave(0)" onclick = "filter_type('none', 'show')" value="Show All Parties">
+                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave(0)">
                                 
                             </div>
                     </div>
                     <div class="dropdown">
-                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
-                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                        <input type="button" class = "default" onmouseenter="buttonOnHover(1)" onmouseleave="buttonOnLeave(1)" onclick = "filter_type('none', 'show')" value="Show All States">
+                            <div class="menus" id="state_menus" onmouseleave="buttonOnLeave(1)">
                                 
                             </div>
                     </div>
                     <div class="dropdown">
-                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
-                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                        <input type="button" class = "default" onmouseenter="buttonOnHover(2)" onmouseleave="buttonOnLeave(2)" onclick = "filter_type('none', 'show')" value="Show All Ranks">
+                            <div class="menus" id="rank_menus" onmouseleave="buttonOnLeave(2)">
                                 
                             </div>
                     </div>
                 </div>
-                
+                <h1 id="#filteredby"></h1>
                 <table id="senators_table">
                     
                 </table>

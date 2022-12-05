@@ -76,12 +76,9 @@ function displayJSON(obj) {
     leadInfo+= "</tbody></table>";   // Close the table element.
     seninfo = "";
     seninfo += "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>";
-    party_list=[];
-    state_list=[];
-    rank_list=[];
-    party_content = {};
-    state_content = {};
-    rank_content = {};
+    party_list={};
+    state_list={};
+    rank_list={};
 
     function add_element(obj, content, key) {
         if (!(key in obj)) {
@@ -121,7 +118,7 @@ function displayJSON(obj) {
 function buttonContent(array, filter_type) {
     output = "";
     for (i=0; i < array.length; i++) {
-        output += "<input type='submit' class='menu' onmouseleave='buttonOnLeave()' value = "+array[i]+" onclick=\"filter_type("+array[i]+","+filter_type+");\"></input>";
+        output += "<input type='button' class='menu' onmouseleave='buttonOnLeave()' value = "+array[i]+" onclick = filter("+array[i]+","+filter_type+")></input>";
     }
     return output;
 }
@@ -162,24 +159,19 @@ function buttonOnLeave(level) {
     });
 }
 
-function filter_type(value, type) {
-    if (type == "party") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
-        output = party_content[value] + "</tbody></table>";
+function filter(value, filter) {
+    if (filter == "party") {
+        output = party_list[value] + "</tbody></table>";
     }
-    if (type == "state") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
-        output = state_content[value] + "</tbody></table>";
+    if (filter == "state") {
+        output = state_list[value] + "</tbody></table>";
     }
-    if (type == "rank") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
-        output = rank_content[value] + "</tbody></table>";
+    if (filter == "rank") {
+        output = rank_list[value] + "</tbody></table>";
     }
-    if (type == "show") {
-        output = seninfo
+    if (filter == "show") {
+        output = seninfo;
     }
     document.getElementById("senators_table").innerHTML = output;
-
 }
-
     

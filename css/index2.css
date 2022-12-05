@@ -263,25 +263,45 @@ nav ul li a:hover:after{
 }
 
 .dropdown_container {
-    width: 80%;
+    width: 100%;
     height: 10%;
+    text-align: center;
+}
+
+.filter {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: white;
+    float: left;
+    position: relative;
+    height: 100%;
+    margin: 3%;
+    
 }
 
 .dropdown {
+
     display: inline-block;
-    flex: left;
-    width: 33%;    
-}
-
-.default {
-    background-color: black;
-}
-
-.default:hover {
-    background-color: white;
+    float: left;
+    padding: 0.5rem;
+    width: 25%;
+    height: 25%;   
+    overflow: visible; 
+    z-index: 1000;
 }
 
 .default, .menu {
+    background-color: white;
+    color: #B42434;
+}
+
+.default:hover, .menu:hover {
+    background-color: #CCCCD9;
+    color: #B42434;
+}
+
+.default, .menu {
+    position: relative;
     padding: 15px;
     font-size: 1.5em;
     border: none;
@@ -289,6 +309,7 @@ nav ul li a:hover:after{
     width: 100%;
     color: black;
     transition: 0.2s;
+    z-index: 1000;
 }
 
 .menus {
@@ -301,9 +322,13 @@ nav ul li a:hover:after{
 }
 
 .menu:hover {
+    overflow: visible; 
+    z-index: 1000;
     transform: scale(1.2);
 }
 
 .menus_on_click {
+    overflow: visible; 
+    z-index: 1000;
     transform: scaleY(1);
 }
