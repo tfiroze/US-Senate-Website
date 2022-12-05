@@ -117,12 +117,26 @@ function page(num)
                 var office = sen[i].office;
                 var dob = sen[i].person.birthday;
                 var startdate = sen[i].startdate; 
-                var twitter = sen[i].person.twitter;  
+                if(sen[i].person.twitter!=null)
+                {
+                    var twitter = sen[i].person.twitter;  
+                }
+                else{
+                    var twitter = "No Twitter ID";
+                }
+                if(sen[i].person.youtubeid!=null)
+                {
+                    var yout = sen[i].person.youtubeid; 
+                }
+                else{
+                    var yout = "No Youtube ID";
+                }
                 var yout = sen[i].person.youtubeid;
+                var web = sen[i].website
                 
             }
         }
-        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td></tr>";
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td><td><a href=\""+web+"\">Website link</a></td></tr>";
         seninfo += "</table>"; 
         
 
