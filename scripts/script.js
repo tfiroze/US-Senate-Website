@@ -16,7 +16,6 @@ function load_JSON(){
     xmlhttp.send();
 };
 
-var pen = JSON.parse(xmlhttp.responseText);
     
 function displayJSON(obj) {
     
@@ -86,7 +85,7 @@ function displayJSON(obj) {
         var gend = sen[i].person.gender; 
         var rank = sen[i].senator_rank_label; 
         
-        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page("+i+")\">Click me</button></td></tr>";
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page("+sen[i].person.cspanid+")\">Click me</button></td></tr>";
     }
     seninfo += "</table>";
      // Close the table element.
@@ -100,6 +99,8 @@ function displayJSON(obj) {
     document.getElementById("id02").innerHTML = demout;
     document.getElementById("id03").innerHTML = leadInfo;
     document.getElementById("id04").innerHTML = seninfo;
+    num = 5;
+    document.getElementById("id05").innerHTML = repout;
     
     
 }
@@ -109,15 +110,21 @@ function page(num)
         window.location.href = "test.html";
         seninfo = "<table border = 2 >";
         seninfo += "<tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr>";
-        i=num;
-        var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
-        var par = sen[i].party;
-        var state = sen[i].state;
-        var gend = sen[i].person.gender; 
-        var rank = sen[i].senator_rank_label;
-        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ rank+"</td></tr>";
-        seninfo += "</table>";
-        document.getElementById("id05").innerHTML = seninfo;
-
+        for (var i=0; i <sen.length; i++) 
+        {
+            if(num==sen[i].person.cspanid)
+            {
+                var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+                var office = sen[i].office;
+                var dob = sen[i].person.birthday;
+                var startdate = sen[i].startdate; 
+                var twitter = sen[i].person.twitter;  
+                var yout = sen[i].person.youtubeid;
+                
+            }
+        }
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td></tr>";
+        seninfo += "</table>"; 
+        
 
     }
