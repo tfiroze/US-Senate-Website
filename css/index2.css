@@ -268,6 +268,8 @@ nav ul li a:hover:after{
 }
 
 .dropdown {
+    display: inline-block;
+    flex: left;
     width: 33%;    
 }
 
@@ -286,17 +288,19 @@ nav ul li a:hover:after{
     outline: none;
     width: 100%;
     color: black;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .menus {
-    position: absolute;
+    height: 30%;
+    overflow: auto;
+    position: relative;
     transform: scaleY(0);
     transform-origin: top;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-.menus:hover {
+.menu:hover {
     transform: scale(1.2);
 }
 

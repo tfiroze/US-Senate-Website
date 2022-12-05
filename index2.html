@@ -3,12 +3,12 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/index2.css">
         <script type="text/javascript" src="scripts/script2.js"></script>
-
+        
         <title>US Senate</title>
 
     </head>
         
-    <body onload="load_JSON()">
+    <body>
         <header>
             <nav>
                 <img class="US_Senate_logo" src="images/senate.png" alt="US Senate Logo"></img>
@@ -63,14 +63,25 @@
                 <h1 class="senators_title">Senators</h1>
                 <div class="dropdown_container">
                     <div class="dropdown">
-                        <button class="default">Show all</button>
-                            <div class="menus" id="menus">
-                                <button class="menu">Republican</button>
-                                <button class="menu">Democratic</button>
+                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
+                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                                
                             </div>
-                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
+                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                                
+                            </div>
+                    </div>
+                    <div class="dropdown">
+                        <input type="button" class = "default" onmouseenter="buttonOnHover()" onmouseleave="buttonOnLeave()"value="Show All">
+                            <div class="menus" id="party_menus" onmouseleave="buttonOnLeave()">
+                                
+                            </div>
                     </div>
                 </div>
+                
                 <table id="senators_table">
                     
                 </table>

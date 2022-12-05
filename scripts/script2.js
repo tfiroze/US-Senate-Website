@@ -1,25 +1,23 @@
-function load_JSON(){
-    var xmlhttp = new XMLHttpRequest();
-    var url = "senators.json";
 
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+var xmlhttp = new XMLHttpRequest();
+var url = "senators.json";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             
-            //Parse the JSON data to a JavaScript variable. 
-            var parsedObj = JSON.parse(xmlhttp.responseText);    
-            // This function is defined below and deals with the JSON data parsed from the file. 
-            displayJSON(parsedObj); 
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+        //Parse the JSON data to a JavaScript variable. 
+        var parsedObj = JSON.parse(xmlhttp.responseText);    
+        // This function is defined below and deals with the JSON data parsed from the file. 
+        displayJSON(parsedObj); 
+    }
 };
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
 
-
-    
+var sen;
 function displayJSON(obj) {
     
-    var sen = obj.objects;
+    sen = obj.objects;
     
     // This code iterates through the colorArray and writes html code to put the color information in a table.
     var rep = 0;
@@ -40,7 +38,7 @@ function displayJSON(obj) {
     var repout = "Republicans: " + rep;
     var demout = "Democrats: " + dem;
     var name;
-    j=0
+    j=0;
     var leadInfo = "";
     leadInfo += "<thead><tr><th>Name</th><th>Title</th><th>Party</th></tr></thead><tbody>"; 
     for (var i=0; i <sen.length; i++) 
@@ -75,9 +73,13 @@ function displayJSON(obj) {
         }
         
     }  
-    leadInfo+= "</tbody></table>"   // Close the table element.
+    leadInfo+= "</tbody></table>";   // Close the table element.
     seninfo = "";
     seninfo += "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>";
+    party_list=[];
+    state_list=[];
+    rank_list=[];
+
     for (var i=0; i <sen.length; i++) 
     { 
         var name=sen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
@@ -85,10 +87,32 @@ function displayJSON(obj) {
         var state = sen[i].state;
         var gend = sen[i].person.gender; 
         var rank = sen[i].senator_rank_label; 
+
+        if (!state_list.includes(state)) {
+            state_list.push(state);
+        }
+        if (!party_list.includes(par)) {
+            party_list.push(par);
+        }
+        
+        if (!rank_list.includes(rank)) {
+            console.log(rank);
+            rank_list.push(rank);
+        }
         
         seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>";
     }
     seninfo += "</tbody></table>";
+
+function buttonContent(array) {
+    output = "";
+    for (i=0; i < array.length; i++) {
+        output += "<input type='button' class='menu' onmouseleave='buttonOnLeave()' value = "+array[i]+"></input>";
+    }
+    return output;
+}
+    
+
     
     
     // Add the new html code to the div element with id = 'id01'.
@@ -96,14 +120,24 @@ function displayJSON(obj) {
     document.getElementById("republican_count").innerHTML = rep;
     document.getElementById("lead_role_info_table").innerHTML = leadInfo;
     document.getElementById("senators_table").innerHTML = seninfo;
+    document.getElementById("party_menus").innerHTML = buttonContent(party_list);
+    document.getElementById("state_menus").innerHTML = buttonContent(state_list);
+    document.getElementById("rank_menus").innerHTML = buttonContent(rank_list);
 }
 
 
 
-function filterButton() {
-    default_value = document.querySelector(".default")
-    menus = document.querySelector(".menus")
-    default_value.addEventListerner("click", ()=> {
-        menus
-    })
+function buttonOnHover() {
+    let default_value = document.querySelector(".default");
+    let menus = document.querySelector(".menus");
+    default_value.addEventListener("mouseenter", ()=> {
+        menus.classList.toggle("menus_on_click");
+    });    
+}
+
+function buttonOnLeave() {
+    let menus = document.querySelector(".menus");
+    menus.addEventListener("mouseleave", ()=> {
+        menus.classList.remove("menus_on_click");
+    });
 }
