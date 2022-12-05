@@ -99,6 +99,7 @@ function displayJSON(obj) {
         var state = sen[i].state;
         var gend = sen[i].person.gender; 
         var rank = sen[i].senator_rank_label; 
+        var id = sen[i].person.cspanid;
 
         if (!state_list.includes(state)) {
             state_list.push(state);
@@ -110,7 +111,7 @@ function displayJSON(obj) {
         if (!rank_list.includes(rank)) {
             rank_list.push(rank);
         }
-        html = "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button id = \"view_button\" onClick=\"page()\">More</button></td></tr>"
+        html = "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button id = \"view_button\" onClick=\"display_page(" +id + ")\">More</button></td></tr>";
         seninfo += html;
         add_element(party_content,html,par);
         add_element(state_content,html,state);
@@ -174,4 +175,15 @@ function filter_type(value, type) {
 
 }
 
+
+var op
+function display_page(num){
+        localStorage.setItem("id", num);
+        window.location.href = "test.html";
+}
+
+function load_JSON() {
+    document.getElementById("id05").innerHTML = localStorage.getItem("id");
+
+}
     
