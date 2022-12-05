@@ -295,6 +295,11 @@ nav ul li a:hover:after{
     color: #B42434;
 }
 
+#view_button {
+    font-size: large;
+    width: 7vw;
+    height: 4vh;
+}
 .default:hover, .menu:hover {
     background-color: #CCCCD9;
     color: #B42434;
