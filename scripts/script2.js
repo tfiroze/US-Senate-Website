@@ -184,7 +184,7 @@ function display_page(num){
 function load_JSON() {
     num = localStorage.getItem("id");
     seninfo = "";
-        seninfo += "<thead><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></thead>";
+        seninfo += "<thead><th>Name</th><th>Office</th><th>State</th><th>D.O.B</th><th>Start Date</th><th>Twitter</th><th>Youtube</th></thead>";
         for (var i=0; i <sen.length; i++) 
         {
             if(num==sen[i].person.cspanid)
@@ -198,8 +198,7 @@ function load_JSON() {
                 
             }
         }
-        seninfo += "<tr><td>"+ name + "</a></td><td>" + office + "</td><td>" + dob + "</td><td>"+startdate +"</td><td>"+twitter+"</td><td>"+ yout+"</td></tr>";
-        seninfo += "</thead>"; 
+        seninfo += "<tr><td>Office</td><td>"+name+"</td></tr><tr><td>Date of Birth</td><td>"+dob+"</td></tr><tr><td>Start Date</td><td>"+startdate+"</td></tr><tr><td>Twitter</td><td>"+twitter+"</td></tr><tr><td>Youtube</td><td>"+yout+"</td></tr><tr><td>Website</td><td>"+web+"</td></tr>";
 
     document.getElementById("table").innerHTML = seninfo;
 
