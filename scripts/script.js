@@ -15,7 +15,7 @@ function load_JSON(){
     xmlhttp.send();
 };
 
-
+var pen = JSON.parse(xmlhttp.responseText);
     
 function displayJSON(obj) {
     
@@ -85,16 +85,12 @@ function displayJSON(obj) {
         var gend = sen[i].person.gender; 
         var rank = sen[i].senator_rank_label; 
         
-        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>";
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page("+sen[i].person.cspanid+")\">Click me</button></td></tr>";
     }
     seninfo += "</table>";
      // Close the table element.
-     var op
-    function page(vat)
-    {
-        location.href = "test.html";
-        op = vat;
-    }
+     
+    
 
     
     
@@ -103,6 +99,24 @@ function displayJSON(obj) {
     document.getElementById("id02").innerHTML = demout;
     document.getElementById("id03").innerHTML = leadInfo;
     document.getElementById("id04").innerHTML = seninfo;
-    document.getElementById("id05").innerHTML = op;
+    
     
 }
+var op
+function page(num)
+    {
+        window.location.href = "test.html";
+        seninfo = "<table border = 2 >";
+        seninfo += "<tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr>";
+        i=num
+        var name=pen[i].person.firstname + " "+sen[i].person.middlename + " "+sen[i].person.lastname ;
+        var par = pen[i].party;
+        var state = sen[i].state;
+        var gend = sen[i].person.gender; 
+        var rank = sen[i].senator_rank_label;
+        seninfo += "<tr><td><a href=\"index2.html\">"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page("+sen,sen[i].person.cspanid+")\">Click me</button></td></tr>";
+        seninfo += "</table>";
+        document.getElementById("id05").innerHTML = seninfo;
+
+
+    }
