@@ -96,6 +96,14 @@ function displayJSON(obj) {
     document.getElementById("republican_count").innerHTML = rep;
     document.getElementById("lead_role_info_table").innerHTML = leadInfo;
     document.getElementById("senators_table").innerHTML = seninfo;
-    
-    
+}
+
+
+
+function filterButton() {
+    default_value = document.querySelector(".default")
+    menus = document.querySelector(".menus")
+    default_value.addEventListerner("click", ()=> {
+        menus
+    })
 }

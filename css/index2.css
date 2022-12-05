@@ -261,3 +261,45 @@ nav ul li a:hover:after{
     color: inherit;
     text-decoration: none;
 }
+
+.dropdown_container {
+    width: 80%;
+    height: 10%;
+}
+
+.dropdown {
+    width: 33%;    
+}
+
+.default {
+    background-color: black;
+}
+
+.default:hover {
+    background-color: white;
+}
+
+.default, .menu {
+    padding: 15px;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: black;
+    transition: 0.5s;
+}
+
+.menus {
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+}
+
+.menus:hover {
+    transform: scale(1.2);
+}
+
+.menus_on_click {
+    transform: scaleY(1);
+}
