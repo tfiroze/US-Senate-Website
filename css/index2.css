@@ -103,7 +103,7 @@ nav ul li a:hover:after{
 }
 
 .lead_role_container {
-    margin: 10vw 0;
+    margin: 2vw 0;
     display: inline-block;
     width: 48vw;
 }
@@ -172,23 +172,92 @@ nav ul li a:hover:after{
     color: #3C3C6C;
 }
 
-#lead_role_info_table {
+.senate_leaders, .senators_title {
+    color: #747094;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 2.8rem;
+}
+
+#lead_role_info_table, #senators_table {
     border-collapse: collapse;
     font-size: 1.5rem;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    text-align: center;
 }
 
-#lead_role_info_table thead th {
+#lead_role_info_table thead tr th {
     background-color: #747094;
-    color: white;
-    
+    color: white;    
 }
 
 
-#lead_role_info_table th,
-#lead_role_info_table td {
+
+#lead_role_info_table thead tr th,
+#lead_role_info_table tbody tr td {
     padding: 10px 15px;
 }
 
+#lead_role_info_table thead tr th {
+    vertical-align: middle;
+}
+
+#lead_role_info_table thead{
+    font-size: 2rem;
+}
 
 
+#lead_role_info_table tbody tr {
+    border-bottom: #CCCCD9 2px solid;
+}
+
+
+#lead_role_info_table tbody tr:last-of-type {
+    border-bottom: #747094 5px solid;
+}
+
+.senators_container {
+    background-color: #B42434;
+}
+
+.senators_table_container {
+    position: relative;
+    display: block;
+    padding: 5vh;
+    margin: 0 auto;
+    width: 60%;
+    height: 100vh;
+    overflow: auto;
+}
+.senators_title {
+    color: white;
+}
+#senators_table {
+    color: white;
+    width: 100%;
+    white-space: nowrap;
+}
+
+#senators_table thead tr th {
+    background-color: white;
+    color: #B42434;
+}
+
+#senators_table thead tr th,
+#senators_table tbody tr td {
+    padding: 15px 10px;
+}
+
+#senators_table tbody tr {
+    border-bottom: 2px #CCCCD9 solid;
+}
+
+#senators_table tbody tr:last-of-type {
+    border-bottom: white 10px solid;
+}
+
+#senators_table tbody tr td a {
+    color: inherit;
+    text-decoration: none;
+}
