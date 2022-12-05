@@ -74,8 +74,7 @@ function displayJSON(obj) {
         
     }  
     leadInfo+= "</tbody></table>";   // Close the table element.
-    seninfo = "";
-    seninfo += "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>";
+    seninfo = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>";
     party_list=[];
     state_list=[];
     rank_list=[];
@@ -85,7 +84,8 @@ function displayJSON(obj) {
 
     function add_element(obj, content, key) {
         if (!(key in obj)) {
-            obj[key] = [content]
+            head = "<thead><tr><th>Name</th><th>Party</th><th>State</th><th>Gender</th><th>Rank</th><th>but</th></tr></thead><tbody>"
+            obj[key] = [head+content]
         }
         else {
             obj[key].push(content)
@@ -110,18 +110,18 @@ function displayJSON(obj) {
         if (!rank_list.includes(rank)) {
             rank_list.push(rank);
         }
-        seninfo += "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>";
-        add_element(party_list,seninfo,par);
-        add_element(state_list,seninfo,par);
-        add_element(rank_list,seninfo,par);
+        html = "<tr><td>"+ name + "</a></td><td>" + par + "</td><td>" + state + "</td><td>"+gend +"</td><td>"+rank+"</td><td>"+ "<button onClick=\"page()\">Click me</button></td></tr>"
+        seninfo += html;
+        add_element(party_content,html,par);
+        add_element(state_content,html,state);
+        add_element(rank_content,html,rank);
     }
     seninfo += "</tbody></table>";
-
 
 function buttonContent(array, filter_type) {
     output = "";
     for (i=0; i < array.length; i++) {
-        output += "<input type='submit' class='menu' onmouseleave='buttonOnLeave()' value = "+array[i]+" onclick=\"filter_type("+array[i]+","+filter_type+");\"></input>";
+        output += "<input type='submit' class='menu' onmouseleave='buttonOnLeave()' value = " + array[i] + " onclick = filter_type(\"" + array[i] + "\",\"" + filter_type + "\");>" ;
     }
     return output;
 }
@@ -136,13 +136,6 @@ function buttonContent(array, filter_type) {
     document.getElementById("party_menus").innerHTML = buttonContent(party_list, "party");
     document.getElementById("rank_menus").innerHTML = buttonContent(rank_list, "rank");
     
-    
-    console.log(party_list);
-    console.log(rank_list);
-    console.log(state_list);
-
-
-
 }
 
 
@@ -162,17 +155,16 @@ function buttonOnLeave(level) {
     });
 }
 
+console.log(party_content["Republican"])
+
 function filter_type(value, type) {
     if (type == "party") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
         output = party_content[value] + "</tbody></table>";
     }
     if (type == "state") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
         output = state_content[value] + "</tbody></table>";
     }
     if (type == "rank") {
-        document.getElementById("filteredby").innerHTML = "Filtered by " + type + ":" + value;
         output = rank_content[value] + "</tbody></table>";
     }
     if (type == "show") {
